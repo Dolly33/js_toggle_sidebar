@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display:flex;
+            margin:0;
+        }
+
+        nav{
+            width:20%;
+            background-color: rgb(39, 39, 212);
+            position: fixed;
+            margin-left: 0;
+            transition: 0.4s;
+            height:100vh;
+        }
+
+        section{
+            width:80%;
+            margin-left:300px;
+        }
+
+        .active-nav {
+        margin-left: -300px;
+        }
+
+
+        .active-cont {
+        margin-left: 0;
+        }
+        
+    </style>
+</head>
+<body>
+    <nav id="sidebar">NavBar</nav>
+    <section class="my-container">
+        <button id="menu-btn">Toggle</button>
+    </section>
+
+    <script>
+        var menu_btn = document.querySelector("#menu-btn")
+        var sidebar = document.querySelector("#sidebar")
+        var container = document.querySelector(".my-container")
+        menu_btn.addEventListener("click", () => {
+            sidebar.classList.toggle("active-nav")
+            container.classList.toggle("active-cont")
+        })
+    </script>
+</body>
+</html>
